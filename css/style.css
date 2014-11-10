@@ -1,0 +1,101 @@
+*{
+	margin:0;
+	padding: 0;
+}
+#input{
+	width: 300px;
+	height: 40px;
+    margin:0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+#container{
+	width: 520px;
+	height: 394px;
+	margin: 0 auto;
+	background-color: red;
+	padding:10px;
+	text-align: center;
+
+
+}
+.layout{
+	width: 110px;height: 110px;
+	text-align: center;
+	background-color: green;
+	margin-right: 9px;
+	margin-left: 9px;
+	margin-top: 20px;
+	float:left;
+	position: relative;
+	backface-visibility: hidden;
+
+
+}
+.added{
+	width: 110px;height: 110px;
+	text-align: center;
+	background-color: white;
+	position: absolute;
+
+}
+.back{
+	width: 110px;height: 110px;
+	text-align: center;
+	background-color:#CCC;
+	position: absolute;
+
+}
+#result{
+	position: absolute;
+	background-color: blue;
+	width: 100px;
+	height: 20px;
+	text-align: center;
+	top:50px;
+	left: 50%;
+	margin-left: 200px;
+}
+.top{
+	width: 110px;height: 110px;
+	text-align: center;
+	background-color: yellow;
+	position: absolute;
+
+}
+.flip{transform: rotate3d(0,1,0,0deg);transition-duration: 0.4s;}
+
+.fliped{transform: rotate3d(0,1,0,-90deg);transition-duration: 0.4s;}
+
+#alert{
+	display: none;
+	position: absolute;
+	width: 200px;
+	height: 250px;
+	text-align: center;
+	top:100px;
+	left: 50%;
+	margin-left: 300px;
+}
+button{
+	width: 50px;
+	height: 20px;
+}
+.selected{
+	width: 110px;height: 110px;
+	text-align: center;
+	background-color:#036;
+	position: absolute;
+}
+
+#names{
+	display: block;
+	position: absolute;
+	width: 200px;
+	height: 250px;
+	text-align: center;
+	top:100px;
+	left:50px;
+}
