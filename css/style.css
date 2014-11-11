@@ -3,35 +3,41 @@
 	padding: 0;
 }
 #input{
-	width: 300px;
-	height: 40px;
+	width: 100%;
+	height: 100px;
     margin:0 auto;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
 }
 
 #container{
 	width: 520px;
-	height: 394px;
+	height: 400px;
 	margin: 0 auto;
-	background-color: red;
+	background-color: #F08080;
 	padding:10px;
 	text-align: center;
+	border: solid 1px;
+	border-color: #F08080;
+	border-radius: 8px;
 
 
 }
 .layout{
 	width: 110px;height: 110px;
 	text-align: center;
-	background-color: green;
+	background-color: #F0E68C;
 	margin-right: 9px;
 	margin-left: 9px;
 	margin-top: 20px;
 	float:left;
 	position: relative;
-	backface-visibility: hidden;
-
+	border: solid 1px;
+	border-color: #F08080;
+	border-radius: 8px;
+/*	backface-visibility: hidden;
+*/
 
 }
 .added{
@@ -39,13 +45,19 @@
 	text-align: center;
 	background-color: white;
 	position: absolute;
+	border: solid 1px;
+	border-color: #F08080;
+	border-radius: 8px;
 
 }
 .back{
 	width: 110px;height: 110px;
 	text-align: center;
-	background-color:#CCC;
+	background: url("http://localhost/undercover/img/excalmatory.jpg") center center no-repeat;
 	position: absolute;
+	border: solid 1px;
+	border-color: #F08080;
+	border-radius: 8px;
 
 }
 #result{
@@ -91,11 +103,29 @@ button{
 }
 
 #names{
-	display: block;
-	position: absolute;
-	width: 200px;
-	height: 250px;
-	text-align: center;
-	top:100px;
-	left:50px;
+	display: none;  
+	position: absolute;  
+	top: 25%;  
+	left: 22%; 
+	width: 53%;  
+	height: 49%;  
+	padding: 8px;  
+	border: 8px solid #E8E9F7;  
+	background-color: white; 
+ 	z-index:1002;  
+	overflow: auto;
+
 }
+#bg{ 
+	display: none;  
+	position: absolute;  
+	top: 0%;  
+	left: 0%;  
+	width: 100%;  
+	height: 100%;  
+	background-color: black;  
+	z-index:1001;  
+	-moz-opacity:0.5;  	
+	opacity:.50;  
+	filter: alpha(opacity=50);
+}       

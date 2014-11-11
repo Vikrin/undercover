@@ -3,6 +3,7 @@ window.onload=function(){
 	var setup=document.getElementById('setup');
 	var reset=document.getElementById('reset');
 	var confirm=document.getElementById('confirm');
+	var correct=document.getElementById('setname');
 	var length=charactors.length;
 
 	setup.onclick=function(){
@@ -24,12 +25,12 @@ var playersamount=0;
 var selected;
 var charactor;
 var playeringame=0;
-/*var playername=document.getElementById('name');*/
+var playername="";
 
-function adding(juese){
+
+function adding(juese,div){
 	num=document.getElementById('member').value;
 	charactor=parseInt(Math.random()*juese);
-
 	for(var i=0;i<num;i++){
 		
 	$('#layout-'+i).append('<div class="added flip" id="player-'+i+'"></div>');
@@ -46,14 +47,25 @@ function adding(juese){
 	var coverid=parseInt(Math.random()*players.length);
 	document.getElementById('player-'+coverid).innerHTML=charactors[charactor].B;
 
+	setTimeout(function(){
+	$("#names").css('display','block');
+	$("#bg").css('display','block');
+	},1000);
+	
+
+
+	document.getElementById('setname').onclick=function(){
+		playername=document.getElementById('name').value;
+		$("#names").css('display','none');
+		$("#bg").css('display','none');
+	}
+
 	
 	for(var i=0;i<players.length;i++){
 		document.getElementById('back-'+i).onclick=function(){
 			var self=this;
 			index=self.getAttribute('id');
 			self.className="back fliped";
-/*			self.text(playername.value);
-			playername.value="";*/
 
 			setTimeout(function(){
 
@@ -65,36 +77,53 @@ function adding(juese){
 
 }
 
+
 function removing(){
 	for(var i=0;i<num;i++){
-	$(".layout  :last-child").remove();
+	document.getElementById('player-'+i).remove();
+	document.getElementById('back-'+i).remove();
 	players.pop();
 		}
 	$("#alert").css('display','none');
-	$("#member").text("");
+	$("#member").value="";
+	$("#names").css('display','none');
+	$("#bg").css('display','none');
 }
 
 
 function confirmed(){
 
 	$("#alert").css('display','none');
+	 document.getElementById(index).style.background="#CCC";
      document.getElementById(index).className="back flip";
      setTimeout(function(){
 
      	 document.getElementById(index).onclick=function(){
       	return false;}
 
-      	document.getElementById(index).style.background="blue";
-
+  
+      
+      	
      },200);
      
      playersamount--;
 
+
      setTimeout(function(){
-     	if(playersamount==0){
-     	alert("gamestart");//Make a pop up div instead
-     	gamestart();
-     }
+     	
+     	if(playersamount!=0){
+     	document.getElementById(index).innerHTML=playername;
+     	playername="";
+      	document.getElementById('name').value="";
+      	setTimeout(function(){$("#names").css('display','block');
+      	$("#bg").css('display','block'); 		
+      	},1000);}
+      	else if(playersamount==0){     	
+     	document.getElementById(index).innerHTML=playername;
+     	$("#names").css('display','none');
+     	$("#bg").css('display','none');
+     	//Make a pop up div instead
+     	gamestart();}
 	 },500);
      
  }
@@ -105,7 +134,7 @@ function confirmed(){
  				selected=this.previousSibling.getAttribute('id');
  				if(document.getElementById(selected).innerHTML==charactors[charactor].A){
  					$('#result').text("Loser");
- 					this.style.background='yellow';
+ 					this.style.background="url(http://localhost/undercover/img/error.jpg)";
  					playeringame--;
  					this.onclick=function(){
  						return false;

@@ -2,18 +2,20 @@
 <html>
 <head>
 <meta charset='UFT-8'/>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="http://localhost/undercover/css/style.css">
 
 <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
-<script type="text/javascript" src="main.js"></script>
-<script type="text/javascript" src="charactors.js"></script>
+<script type="text/javascript" src="http://localhost/undercover/js/main.js"></script>
+<script type="text/javascript" src="http://localhost/undercover/js/charactors.js"></script>
 <!--import font template-->
 </head>
 
 <body>
+<div id="bg"></div>  
 <div id="names">
 	<p> Please input your name here, then make a selection on the boxes</p></br>
 	<input type="text" id="name">
+	<button id="setname">Done</button>
 </div>
 
 <div id="result">Change content</div>
@@ -21,8 +23,11 @@
 <div id="input">
 	<p>Please input the amount of players here:</p></br>
 	<input type="text" id="member">
-	<input type="button" value="Setup" id="setup">
-	<input type="button" value="Reset" id="reset">
+	<input id="setup" type="button" value="Setup" />
+	<input id="reset" type="button" value="Reset" />
+
+<!-- 	<input type="button" value="Setup" id="setup">
+	<input type="button" value="Reset" id="reset"> -->
 </div>
 <div id="container">
 <div class="layout" id="layout-0">
