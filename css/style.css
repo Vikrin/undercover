@@ -1,7 +1,43 @@
+@font-face { 
+font-family: "AlexBrush-Regular"; 
+src:url(../KaushanScript-Regular.otf) ;
+}
+
+@keyframes shaking{
+	0%{
+		-webkit-transform:rotate(-20deg);
+		-moz-transform:rotate(-20deg);
+		transform:rotate(-20deg);
+	}
+	25%{
+		-webkit-transform:rotate(40deg);
+		-moz-transform:rotate(40deg);
+		transform:rotate(40deg);
+	}
+	50%{
+		-webkit-transform:rotate(-40deg);
+		-moz-transform:rotate(-40deg);
+		transform:rotate(-40deg);
+	}
+	75%{
+		-webkit-transform:rotate(40deg);
+		-moz-transform:rotate(40deg);
+		transform:rotate(40deg);
+	}
+	100%{
+		-webkit-transform:rotate(-20deg);
+		-moz-transform:rotate(-20deg);
+		transform:rotate(-20deg);
+	}
+
+}
+
+
 *{
 	margin:0;
 	padding: 0;
 }
+
 #input{
 	width: 100%;
 	height: 100px;
@@ -15,11 +51,11 @@
 	width: 520px;
 	height: 400px;
 	margin: 0 auto;
-	background-color: #F08080;
+	background-color: #A8DC3C;
 	padding:10px;
 	text-align: center;
 	border: solid 1px;
-	border-color: #F08080;
+	border-color: #A8DC3C;
 	border-radius: 8px;
 
 
@@ -27,18 +63,15 @@
 .layout{
 	width: 110px;height: 110px;
 	text-align: center;
-	background-color: #F0E68C;
+	background-color: #B9D998;
 	margin-right: 9px;
 	margin-left: 9px;
 	margin-top: 20px;
 	float:left;
 	position: relative;
 	border: solid 1px;
-	border-color: #F08080;
+	border-color: #B9D998;
 	border-radius: 8px;
-/*	backface-visibility: hidden;
-*/
-
 }
 .added{
 	width: 110px;height: 110px;
@@ -46,7 +79,7 @@
 	background-color: white;
 	position: absolute;
 	border: solid 1px;
-	border-color: #F08080;
+	border-color: #B9D998;
 	border-radius: 8px;
 
 }
@@ -56,13 +89,12 @@
 	background: url("http://localhost/undercover/img/excalmatory.jpg") center center no-repeat;
 	position: absolute;
 	border: solid 1px;
-	border-color: #F08080;
+	border-color: #B9D998;
 	border-radius: 8px;
 
 }
 #result{
 	position: absolute;
-	background-color: blue;
 	width: 100px;
 	height: 20px;
 	text-align: center;
@@ -77,19 +109,26 @@
 	position: absolute;
 
 }
-.flip{transform: rotate3d(0,1,0,0deg);transition-duration: 0.4s;}
+.flip{
+	transform: rotate3d(0,1,0,0deg);
+	transition-duration: 0.4s; 
+}
 
-.fliped{transform: rotate3d(0,1,0,-90deg);transition-duration: 0.4s;}
+.fliped{transform: rotate3d(0,1,0,-90deg);transition-duration: 0.4s;
+}
 
 #alert{
-	display: none;
-	position: absolute;
-	width: 200px;
-	height: 250px;
-	text-align: center;
-	top:100px;
-	left: 50%;
-	margin-left: 300px;
+	display: none;  
+	position: absolute;  
+	top: 30%;  
+	left: 75%; 
+	width: 25%;  
+	height: 30%;  
+	padding: 8px;  
+	border: 8px solid #E8E9F7;  
+	background-color: white; 
+ 	z-index:1002;  
+	overflow: auto;
 }
 button{
 	width: 50px;
@@ -105,6 +144,7 @@ button{
 #names{
 	display: none;  
 	position: absolute;  
+	font-family:"AlexBrush-Regular";
 	top: 25%;  
 	left: 22%; 
 	width: 53%;  
@@ -127,5 +167,4 @@ button{
 	z-index:1001;  
 	-moz-opacity:0.5;  	
 	opacity:.50;  
-	filter: alpha(opacity=50);
 }       

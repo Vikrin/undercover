@@ -70,8 +70,9 @@ function adding(juese,div){
 			setTimeout(function(){
 
                 $("#alert").css('display','block');
+                $("#bg").css('display','block');
 
-                },1000);
+                },2000);
 		}
 	}	
 
@@ -88,13 +89,15 @@ function removing(){
 	$("#member").value="";
 	$("#names").css('display','none');
 	$("#bg").css('display','none');
+	$('#result').text("")
 }
 
 
 function confirmed(){
 
 	$("#alert").css('display','none');
-	 document.getElementById(index).style.background="#CCC";
+	$("#bg").css('display','none');
+	 document.getElementById(index).style.background="#E2F1D0";
      document.getElementById(index).className="back flip";
      setTimeout(function(){
 
@@ -115,7 +118,8 @@ function confirmed(){
      	document.getElementById(index).innerHTML=playername;
      	playername="";
       	document.getElementById('name').value="";
-      	setTimeout(function(){$("#names").css('display','block');
+      	setTimeout(function(){
+      	$("#names").css('display','block');
       	$("#bg").css('display','block'); 		
       	},1000);}
       	else if(playersamount==0){     	
@@ -131,20 +135,21 @@ function confirmed(){
  function gamestart(){
  		for(var i=0;i<players.length;i++){
  			document.getElementById('back-'+i).onclick=function(){
+
  				selected=this.previousSibling.getAttribute('id');
  				if(document.getElementById(selected).innerHTML==charactors[charactor].A){
- 					$('#result').text("Loser");
+ 					$('#result').text("That's not the undercover!").css('animation','shaking 0.5s ease .1s');
  					this.style.background="url(http://localhost/undercover/img/error.jpg)";
  					playeringame--;
  					this.onclick=function(){
  						return false;
  					}
  					if(playeringame==2){
- 						alert("gameover");
+ 						alert("gameover,you lost the game T_T");
  						gameover();
  					}
  				}else if(document.getElementById(selected).innerHTML==charactors[charactor].B){
- 					$("#result").text("Winner");
+ 					$("#result").text("You find the undercover!");
  					gameover();
  				}
  			}
